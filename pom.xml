@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.napier.sem</groupId>
-    <artifactId>seMethods</artifactId>
+    <artifactId>sem-set08103</artifactId>
     <version>0.1.0.1</version>
 
     <dependencies>
@@ -17,8 +17,8 @@
     </dependencies>
 
     <properties>
-        <maven.compiler.source>6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
 </project>
