@@ -10,9 +10,9 @@ public class App
     public static void main(String[] args)
     {
         //run locally
-        MongoClient mongoClient = new MongoClient("localhost", 27000);
+        //MongoClient mongoClient = new MongoClient("localhost", 27000);
         // Connect to MongoDB
-        // MongoClient mongoClient = new MongoClient("mongo-dbserver");
+        MongoClient mongoClient = new MongoClient("mongo-dbserver");
         // Get a database - will create when we use it
         MongoDatabase database = mongoClient.getDatabase("myDB");
         // Get a collection from the database
