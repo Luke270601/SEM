@@ -1,6 +1,6 @@
 @startuml
 
-actor HR as "HR Advisor"
+actor Manger as "Department Manager"
 
 rectangle Database
 
@@ -10,7 +10,7 @@ rectangle "HR System" {
 
     usecase UCa as "Print salaries"
 
-    HR - UC4
+    Manger - UC4
     UC4 ..> UCa : include
     UC4 - Database
 }
