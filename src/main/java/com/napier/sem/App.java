@@ -19,6 +19,10 @@ public class App
         // Test the size of the returned data - should be 240124
         System.out.println(employees.size());
 
+        Employee employee = a.getEmployee(10001);
+
+        a.displayEmployee(employee);
+
         // Display
         a.printSalaries(employees);
         // Disconnect from database
@@ -115,12 +119,14 @@ public class App
             if (rset.next())
             {
                 Employee emp = new Employee();
+                emp.manager = new Employee();
+                emp.manager.first_name  = rset.getString("manager_firstname");
+                emp.manager.last_name = rset.getString("manager_lastname");
                 emp.emp_no = rset.getInt("emp_no");
                 emp.first_name = rset.getString("first_name");
                 emp.last_name = rset.getString("last_name");
                 emp.salary = rset.getInt("salary");
                 emp.title = rset.getString("title");
-                emp.manager = rset.getString("manager_firstname") + " " + rset.getString("manager_lastname");
                 return emp;
             }
             else
@@ -144,8 +150,8 @@ public class App
                             + emp.last_name + "\n"
                             + emp.title + "\n"
                             + "Salary:" + emp.salary + "\n"
-                            + emp.dept_name + "\n"
-                            + "Manager: " + emp.manager + "\n");
+                            + emp.dept + "\n"
+                            + "Manager: " + emp.manager.first_name + " " + emp.manager.last_name + "\n");
         }
     }
 
