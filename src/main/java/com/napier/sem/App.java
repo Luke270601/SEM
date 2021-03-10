@@ -1,6 +1,5 @@
 package com.napier.sem;
 
-import jdk.javadoc.internal.doclets.toolkit.taglets.DeprecatedTaglet;
 
 import java.sql.*;
 import java.util.ArrayList;
