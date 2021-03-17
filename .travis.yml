@@ -41,4 +41,4 @@ stages:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - CODECOV_TOKEN='a122c08e-5a53-4921-b82a-77c83168067e'
+
