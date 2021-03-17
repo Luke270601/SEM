@@ -5,32 +5,29 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         // Create new Application
         App a = new App();
 
         // Connect to database
-        a.connect("localhost:33060");
+        if (args.length < 1)
+        {
+            a.connect("localhost:3306");
+        }
+        else
+        {
+            a.connect(args[0]);
+        }
 
-        // Extract employee salary information
-        ArrayList<Employee> employees = a.getAllSalariesByRole("Senior Engineer");
+        Department dept = a.getDepartment("Sales");
+        ArrayList<Employee> employees = a.getSalariesByDepartment(dept);
 
-        // Test the size of the returned data - should be 240124
-        System.out.println(employees.size());
+        // Print salary report
+        a.printSalaries(employees);
 
-        Employee employee = a.getEmployee(10001);
-
-        a.displayEmployee(employee);
-
-        Department department = a.getDepartment("Sales");
-
-        ArrayList<Employee> byDepartment = a.getSalariesByDepartment(department);
-
-        // Display
-        a.printSalaries(byDepartment);
         // Disconnect from database
         a.disconnect();
-
     }
 
     /**
